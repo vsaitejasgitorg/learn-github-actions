@@ -5,14 +5,23 @@ on: [workflow_dispatch]
 
 jobs:
   Test1:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    concurrency:
+      group: demo
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        - run: sleep 10
   Test2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    concurrency:
+      group: demo
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        - run: sleep 5
   Test3:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    concurrency:
+      group: demo
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        - run: sleep 10
