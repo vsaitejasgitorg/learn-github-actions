@@ -1,5 +1,5 @@
 name: example09
-on: [push]
+on: [workflow_dispatch]
 
 
 
