@@ -6,4 +6,6 @@ jobs:
   Test1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "::error Intentional Error::Missing Semicolon"
+      - run: |
+          echo "::error Intentional Error::Missing Semicolon"
+          exit 1
