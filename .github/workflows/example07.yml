@@ -7,7 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          #echo "::error Intentional Error::Missing semicolon"
-          #exit 1
-          echo "::summary 100 Resources Created ::Missing semicolon"
-          echo Hello World >> "$GITHUB_STEP_SUMMARY"
+          echo ${{ job.container.id }}
