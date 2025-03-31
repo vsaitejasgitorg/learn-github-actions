@@ -4,14 +4,26 @@ jobs:
   container-test-job:
     runs-on: self-hosted
     container:
-      image: node:18
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
+      image: docker.io/rkalluru/learnk8s:rhel9-bare
     steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Just Hello
+        run: echo Hello
+
+
+#name: example03
+#on: [push]
+#jobs:
+#  container-test-job:
+#    runs-on: self-hosted
+#    container:
+#      image: node:18
+#      env:
+#        NODE_ENV: development
+#      ports:
+#        - 80
+#      volumes:
+#        - my_docker_volume:/volume_mount
+#      options: --cpus 1
+#    steps:
+#      - name: Check for dockerenv file
+#        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
