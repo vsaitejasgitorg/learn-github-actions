@@ -1,0 +1,24 @@
+name: example05
+on: [push]
+jobs:
+  # Sequential jobs
+  Test1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+  Test2:
+    runs-on: ubuntu-latest
+    needs: Test1
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+  Test3:
+    runs-on: ubuntu-latest
+    needs: Test1
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+  Test4:
+    runs-on: ubuntu-latest
+    needs: ["Test2", "Test3"]
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
